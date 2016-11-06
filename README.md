@@ -1,6 +1,6 @@
 # Stripe_flask
 Stripe Use Python Flask 
-* [Demo]()  
+* [Demo](https://youtu.be/GudRyyoxBRg)  
  
 相信大家都和我一樣覺得線上付款很酷!!
 
