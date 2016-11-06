@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Stripe Tutorial</h1>
+            <p>Stripe Demo</p>
+        </div>
+        <form action="/charge" method="post">
+            <div class="form-group">
+                <label for="email">Amount is $10.00 USD </label>
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="{{ key }}"
+                    data-description="Demo Charge"
+                    data-name="Demo Site"
+                    data-amount="1000"
+                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                    data-locale="auto">
+                </script>
+            </div>
+        </form>
+        <h2>Payments</h2>
+        <table id="datatables" class="table table-hover">
+            <thead>
+            <tr>
+                <th>Amount</th>
+                <th>Description</th>
+                <th>Name</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for charge_data in charge_list %}
+                <tr>
+                    <td>{{ charge_data.Amount }}</td>
+                    <td>{{ charge_data.Description }}</td>
+                    <td>{{ charge_data.Name }}</td>
+                    <td>{{ charge_data.Date }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $('#datatables').DataTable({
+            "order": [[ 3, "desc" ]]
+        });
+    </script>
+
+{% endblock %}
