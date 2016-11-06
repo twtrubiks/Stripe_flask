@@ -58,7 +58,8 @@ P.S KEY請換自己的!!
 
 也可以到 [Dashboard](https://dashboard.stripe.com/test/dashboard) 看付款過的紀錄
 
-
+## External JS
+* [DataTables](https://datatables.net/)
 
 ## 執行環境
 * Python 3.5.2
